@@ -1,7 +1,7 @@
-class apache (
+class apache2 (
     $ssl = true,
     $spdy= true,
-) inherits apache::params {
+) inherits apache2::params {
 
     package {
         $pkg_name:
@@ -25,7 +25,7 @@ class apache (
             mode    => '0644',
             ensure  => present,
             require => Package[$pkg_name],
-            source  => 'puppet:///modules/apache/fastcgi.conf',
+            source  => 'puppet:///modules/apache2/fastcgi.conf',
             notify  => Service[$svc_name];
 
     }
@@ -54,7 +54,7 @@ class apache (
 
 
     if ($ssl == true) {
-        include apache::ssl
+        include apache2::ssl
     }
 
 
@@ -62,7 +62,7 @@ class apache (
         if ($ssl == false) {
             err("SSL has to be enabled in order to use SPDY!")
         } else {
-            include apache::spdy
+            include apache2::spdy
         }
     }
 }

@@ -1,4 +1,4 @@
-class apache::params {
+class apache2::params {
 
     case $::osfamily {
         'RedHat': {

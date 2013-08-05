@@ -1,6 +1,6 @@
-class apache::ssl (
+class apache2::ssl (
     $snakeoil = true
-) inherits apache::params
+) inherits apache2::params
 {
     a2mod {'ssl':
         ensure => present,

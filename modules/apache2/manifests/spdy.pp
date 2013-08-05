@@ -1,4 +1,4 @@
-class apache::spdy inherits apache::params {
+class apache2::spdy inherits apache2::params {
 
     case $::architecture {
         'i386': {

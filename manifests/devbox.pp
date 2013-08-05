@@ -34,6 +34,6 @@ class devbox {
 }
 
 include devbox
-include apache
+include apache2
 include php
 include mysql
